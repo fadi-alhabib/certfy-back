@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BusinessController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\CustomerController;
 use Illuminate\Http\Request;
@@ -11,6 +12,11 @@ Route::get('/user', function (Request $request) {
 
 
 Route::post('/', [CertificateController::class, 'generatePdf']);
+
+Route::prefix('auth')->controller(BusinessController::class)->group(function () {
+    Route::post('/register', 'register');
+    Route::post('/login', 'login');
+});
 
 Route::prefix('certificates')->controller(CertificateController::class)->group(function () {
     Route::get('/', 'index')->middleware('auth:business');
