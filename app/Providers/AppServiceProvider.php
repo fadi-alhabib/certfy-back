@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Services\ImageServiceInterface;
 use App\Http\Services\MemoryImageService;
 
 
