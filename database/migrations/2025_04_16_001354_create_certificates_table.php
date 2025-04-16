@@ -30,7 +30,7 @@ return new class extends Migration
             $table->float('long')->nullable();
             $table->float("range")->nullable()->comment("allowed range in km");
             $table->foreignId('business_id')
-                ->constrained('businesses')->nullOnDelete();
+                ->constrained('businesses');
             $table->dateTime('expiresAt');
 
             $table->timestamps();
