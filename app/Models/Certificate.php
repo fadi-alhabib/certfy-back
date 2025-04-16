@@ -9,16 +9,7 @@ class Certificate extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'fontSize',
-        'fontWeight',
-        'family_id',
-        'textColor',
-        'image',
-        'lat',
-        'long',
-        'expiresAt'
-    ];
+    protected $guarded = [];
 
     protected $dates = [
         'expiresAt',

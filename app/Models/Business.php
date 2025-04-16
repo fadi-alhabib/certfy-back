@@ -10,14 +10,7 @@ class Business extends Authenticatable
 {
     use HasApiTokens, HasFactory;
 
-    protected $fillable = [
-        'logo',
-        'domainName',
-        'phoneNumber',
-        'linkedinProfile',
-        'email',
-        'password',
-    ];
+    protected $guarded = [];
 
     protected $hidden = [
         'password',
