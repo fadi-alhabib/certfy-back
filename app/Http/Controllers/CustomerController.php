@@ -12,7 +12,7 @@ class CustomerController extends Controller
 
     public function index()
     {
-        $user = auth('business')->user();
+        $user = auth('sanctum')->user();
         $certificates = Certificate::where('business_id', $user->id)
             ->with(['customers' => function ($query) {
                 $query->select('customers.id', 'fullNameEn', 'fullNameAr', 'email')
