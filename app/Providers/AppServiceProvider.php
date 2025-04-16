@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Services\MemoryImageService;
-use App\Services\Common\Contracts\ImageServiceInterface;
+
 
 use Illuminate\Support\ServiceProvider;
 
