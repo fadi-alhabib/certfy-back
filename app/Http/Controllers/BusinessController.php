@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\ImageServiceInterface;
 use App\Models\Business;
-use App\Services\Common\Contracts\ImageServiceInterface;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 

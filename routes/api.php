@@ -14,7 +14,7 @@ Route::get('/user', function (Request $request) {
 Route::post('/', [CertificateController::class, 'generatePdf']);
 
 Route::prefix('auth')->controller(BusinessController::class)->group(function () {
-    Route::post('/register', 'register');
+    Route::post('/register', 'store');
     Route::post('/login', 'login');
 });
 

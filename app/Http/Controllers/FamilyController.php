@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Services\ImageServiceInterface;
 use App\Models\Family;
-use App\Services\Common\Contracts\ImageServiceInterface;
+
 use Illuminate\Http\Request;
 
 class FamilyController extends Controller

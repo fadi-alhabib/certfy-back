@@ -4,9 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCertificateRequest;
 use App\Http\Resources\CertificateResource;
+use App\Http\Services\ImageServiceInterface;
 use App\Models\Certificate;
 use App\Models\Customer;
-use App\Services\Common\Contracts\ImageServiceInterface;
+
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
