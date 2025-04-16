@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Services\MemoryImageService;
 use App\Services\Common\Contracts\ImageServiceInterface;
-use App\Services\Common\MemoryImageService;
+
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
