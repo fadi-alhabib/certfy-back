@@ -12,7 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string("name");
             $table->string('logo');
-            $table->string('domainName')->nullable();
+
             $table->string('linkedinProfile')->nullable();
             $table->string('email')->unique();
             $table->string('password');

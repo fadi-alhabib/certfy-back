@@ -19,8 +19,9 @@ class BusinessController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
+            'name'            => "required|string|max:255",
             'logo'            => 'required|mimes:jpeg,jpg,png,webp,svg',
-            'domainName'      => 'nullable|string|max:255',
+            // 'domainName'      => 'nullable|string|max:255',
             'linkedinProfile' => 'nullable|string|max:255',
             'email'           => 'required|email|unique:businesses',
             'password'        => 'required|string|min:6',
