@@ -16,14 +16,14 @@ class CertificateController extends Controller
     public function __construct(private readonly ImageServiceInterface $imageService) {}
     public function index(Request $request)
     {
-        $user = auth('business')->user();
+        $user = auth('auth:sanctum')->user();
         $certificates = Certificate::where('business_id', $user->id)->with('family')->withCount('customers')->get();
         return $this->success("Certificates Fetched Successfuly", CertificateResource::collection($certificates), 200);
     }
 
     public function store(StoreCertificateRequest $request)
     {
-        $user = auth('business')->user();
+        $user = auth('auth:sanctum')->user();
         $data = $request->validated();
 
         $certificate = new Certificate($data);
