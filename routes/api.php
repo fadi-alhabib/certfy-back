@@ -19,9 +19,9 @@ Route::prefix('auth')->controller(BusinessController::class)->group(function () 
 });
 
 Route::prefix('certificates')->controller(CertificateController::class)->group(function () {
-    Route::get('/', 'index')->middleware('auth:business');
-    Route::post('/', 'store')->middleware('auth:business');
-    Route::get('/{id}', 'show')->middleware('auth:business');
+    Route::get('/', 'index')->middleware('auth:sanctum');
+    Route::post('/', 'store')->middleware('auth:sanctum');
+    Route::get('/{id}', 'show')->middleware('auth:sanctum');
     Route::post('/{id}/certfy', 'certfy');
 });
 
