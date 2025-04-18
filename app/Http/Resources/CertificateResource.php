@@ -18,7 +18,6 @@ class CertificateResource extends JsonResource
             "id" => $this->id,
             "fontSize" => $this->fontSize,
             "fontWeight" => $this->fontWeight,
-            "fontFamilyName" => $this->whenLoaded('family', fn() => $this->family->name),
             "textColor" => $this->textColor,
             "image" => $this->image,
             "lat" => $this->when(isset($this->lat),  $this->lat),
