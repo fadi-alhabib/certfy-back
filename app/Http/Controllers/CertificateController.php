@@ -73,8 +73,8 @@ class CertificateController extends Controller
 
         if (!is_null($certificate->lat) && !is_null($certificate->long) && !is_null($certificate->range)) {
 
-            $userLat  = $request->input('lat');
-            $userLong = $request->input('long');
+            $userLat  = $data['lat'];
+            $userLong = $data['long'];
 
 
             $earthRadius = 6371;
