@@ -34,7 +34,7 @@ class CertificateController extends Controller
 
         return $this->success(
             message: "Certificate Created Successfully",
-            data: ["link" => "https://certfy.me/certificates/:id"],
+            data: ["link" => "https://certfy.me/certificates/" . $certificate->id],
             statusCode: 201,
         );
     }
