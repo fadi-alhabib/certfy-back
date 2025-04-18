@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CertfyRequest;
 use App\Http\Requests\StoreCertificateRequest;
 use App\Http\Resources\CertificateResource;
 use App\Http\Services\ImageServiceInterface;
@@ -52,16 +53,10 @@ class CertificateController extends Controller
     }
 
 
-    public function certfy(Request $request, $id)
+    public function certfy(CertfyRequest $request, $id)
     {
 
-        $data = $request->validate([
-            "fullNameEn" => "nullable|string|max:255",
-            "fullNameAr" => "nullable|string|max:255",
-            "email"      => "required|email|unique:customers,email",
-            "lat"        => "required|numeric",
-            "long"       => "required|numeric",
-        ]);
+        $data = $request->validated();
         $customer = Customer::create([
             'fullNameEn' => $data['fullNameEn'],
             'fullNameAr' => $data['fullNameAr'],
