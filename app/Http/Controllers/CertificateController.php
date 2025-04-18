@@ -34,8 +34,8 @@ class CertificateController extends Controller
 
         return $this->success(
             message: "Certificate Created Successfully",
-            data: CertificateResource::make($certificate),
-            statusCode: 201
+            data: ["link" => "https://certfy.me/certificates/:id"],
+            statusCode: 201,
         );
     }
 
@@ -56,8 +56,8 @@ class CertificateController extends Controller
     {
 
         $data = $request->validate([
-            "fullNameEn" => "required|string|max:255",
-            "fullNameAr" => "required|string|max:255",
+            "fullNameEn" => "nullable|string|max:255",
+            "fullNameAr" => "nullable|string|max:255",
             "email"      => "required|email|unique:customers,email",
             "lat"        => "required|numeric",
             "long"       => "required|numeric",

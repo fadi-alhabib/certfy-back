@@ -26,5 +26,5 @@ Route::prefix('certificates')->controller(CertificateController::class)->group(f
 });
 
 Route::prefix('customers')->controller(CustomerController::class)->group(function () {
-    Route::get('/', 'index');
+    Route::get('/', 'index')->middleware('auth:sanctum');
 });

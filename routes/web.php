@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
+Route::get('/*', function () {
     return redirect("https://certfy.me", secure: true);
 });
 Route::get('/storage/{folder}/{filename}', function ($folder, $filename) {
