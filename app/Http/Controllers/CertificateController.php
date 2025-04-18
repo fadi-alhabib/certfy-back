@@ -110,12 +110,10 @@ class CertificateController extends Controller
         }
 
         $customer->certificates()->attach($id);
-
-        return response()->json([
-            'message' => 'Customer certified successfully.',
+        return $this->success("You got certified", [
             'customer' => $customer,
             'certificate' => CertificateResource::make($certificate)
-        ]);
+        ], 200);
     }
 
 
